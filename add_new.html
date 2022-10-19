@@ -1,0 +1,96 @@
+﻿<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- links -->
+    <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+    <style>
+      input:hover {
+        border: 1px solid rgb(218, 114, 218) !important;
+      }
+      form {
+        box-shadow: 1px 4px 8px #8d8787;
+      }
+
+      @media only screen and (max-width: 400px) {
+        form {
+          width: 100%;
+        }
+      }
+      @media only screen and (min-width: 401px) {
+        form {
+          width: 50%;
+        }
+      }
+    </style>
+    <!-- links -->
+  </head>
+
+  <body
+    style="
+      background-size: cover;
+      background-image: url(images/background.jpg);
+      padding: 50px;
+      margin: auto;
+    "
+  >
+    <div>
+      <form
+        method="post"
+        onsubmit="return (checkpassword()&&checkInputIsNumber()); "
+        class="needs-validation"
+        style="background: #fff; padding: 10 25 20 25; margin: auto"
+      >
+        <h2
+          style="
+            color: rgb(198, 107, 198);
+            font-family: cursive;
+            font-weight: 600;
+            text-shadow: 2px 2px 3px rgb(106, 101, 101);
+          "
+        >
+          Add New Media
+        </h2>
+        <div class="mb-3 mt-3" style="position: relative">
+          <label for="cover" style="margin-right: 10px">Name:</label>
+          <br />
+          <input type="text" id="title" class="form-control" required />
+          <label for="cover" style="margin-right: 10px">Description:</label>
+          <br />
+          <input type="text" id="details" class="form-control" />
+        </div>
+        <div class="mb-3 mt-3" style="position: relative">
+          <label style="margin-right: 10px; display: inline-block"
+            >Select media</label
+          >
+          <br />
+          <select id="mediaType" class="form-control" required>
+            <option value="movies">Movies</option>
+            <option value="songs">Songs</option>
+            <option value="stories">Stories</option>
+          </select>
+        </div>
+
+        <div class="mb-3 mt-3" style="position: relative">
+          <label for="cover" style="margin-right: 10px; display: inline-block"
+            >Cover:</label
+          >
+          <br />
+          <input type="file" id="cover" class="form-control" required />
+          <label for="file">File:</label>
+          <input type="file" id="file" class="form-control" required />
+        </div>
+        <div class="mb-3 mt-3" style="position: relative">
+          <button
+            id="add"
+            class="form-control"
+            value="Add"
+            OnClick="add_Click"
+          ></button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

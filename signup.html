@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+    <!-- links -->
+    <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+    <style>
+      input:hover {
+        border: 1px solid rgb(218, 114, 218) !important;
+      }
+      form {
+        box-shadow: 1px 4px 8px #8d8787;
+      }
+      .btn-success {
+        width: 33%;
+        border: none;
+        background: #4690d7;
+        margin: 0;
+        border: none;
+        background: #4690d7;
+        display: block;
+        margin: auto;
+      }
+      @media only screen and (max-width: 400px) {
+        form {
+          width: 100%;
+        }
+      }
+      @media only screen and (min-width: 401px) {
+        form {
+          width: 50%;
+        }
+      }
+      h2 {
+        text-align: center;
+        text-shadow: 1px 1px 3px #9d9494;
+        color: #4690d7;
+        font-family: cursive;
+        font-weight: 700;
+        padding-bottom: 10px;
+        padding-top: 10px;
+      }
+    </style>
+    <!-- links -->
+  </head>
+
+  <body
+    style="
+      background-size: cover;
+      background-image: url(images/background.jpg);
+      padding: 50px;
+      margin: auto;
+    "
+  >
+    <div>
+      <form
+        id="form1"
+        method="post"
+        onsubmit="return (checkpassword()&&checkInputIsNumber()); "
+        class="needs-validation"
+        style="background: #fff; padding: 10 25 20 25; margin: auto"
+      >
+        <h2>Signup Page</h2>
+        <div class="mb-3 mt-3">
+          <label for="first name" style="margin-bottom: 10px"
+            >First name :</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="first name"
+            placeholder="Enter your First name"
+            name="firstname"
+            required
+          />
+        </div>
+
+        <div class="mb-3 mt-3">
+          <label for="last name" style="margin-bottom: 10px">Last name :</label>
+          <input
+            type="text"
+            class="form-control"
+            id="last name"
+            placeholder="Enter your Last Name"
+            name="lastname"
+            required
+          />
+        </div>
+
+        <label style="margin-right: 10px">Select language</label>
+        <select name="language" size="1" class="form-control" required>
+          <option selected value="Englist">English</option>
+          <option value="Arabic">Arabic</option>
+          <option value="french">French</option>
+          <option value="German">German</option>
+        </select>
+
+        <label>Gender</label>
+        <select name="gender" size="1" class="form-control" required>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+
+        <div class="mb-3 mt-3">
+          <label for="BirthDate" style="margin-bottom: 5px">Birth Date :</label>
+          <input
+            type="date"
+            class="form-control"
+            id="BirthDate"
+            placeholder="Enter your Birth Date"
+            name="date"
+            required
+          />
+        </div>
+
+        <div class="mb-3 mt-3">
+          <label for="phone" style="margin-bottom: 5px">Phone Number :</label>
+          <input
+            type="text"
+            class="form-control"
+            id="phone"
+            placeholder="Enter Phone Number"
+            name="phone"
+            required
+          />
+        </div>
+
+        <div class="mb-3 mt-3">
+          <label for="email" style="margin-bottom: 5px">Email :</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Enter email"
+            name="email"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="pwd" style="margin-bottom: 10px">Password :</label>
+          <input
+            id="password"
+            type="password"
+            class="form-control"
+            placeholder="Enter password"
+            name="password"
+            required
+            style="margin-bottom: 10px"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="cpwd" style="margin-bottom: 10px"
+            >confirm password :</label
+          >
+          <input
+            id="repass"
+            type="password"
+            class="form-control"
+            placeholder="Enter password again"
+            name="repass"
+            required
+            style="margin-bottom: 10px"
+          />
+        </div>
+        <button
+          id="register"
+          class="btn btn-success"
+          value="Register"
+          type="submit"
+        ></button>
+      </form>
+    </div>
+    <script>
+      function checkpassword() {
+        let password = document.getElementById("password").value;
+        let repass = document.getElementById("repass").value;
+        if (password != repass) {
+          alert("please check your password and repeat password");
+          return false;
+        } else {
+          return true;
+        }
+        v;
+      }
+      // function checkInputIsNumber
+      function checkInputIsNumber() {
+        var value2 = document.getElementById("phone").value;
+
+        if (isNaN(value2)) {
+          alert("Please Provide the input phone as a number");
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
